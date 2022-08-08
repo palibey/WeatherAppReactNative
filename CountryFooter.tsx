@@ -20,8 +20,6 @@ export const CountryFooter = async (arr: String) => {
     return Promise.all(promises);
   };
   const getData: any = await fetcher();
-  console.log('--------------------------------------------------');
-  console.log('data', getData);
 
   const toReturn: any = [];
   for (let i = 0; i < arr.length; i++) {

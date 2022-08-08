@@ -49,6 +49,7 @@ function CountryTextInput(props: any) {
 
 function imageReturn(data: any, comp: any) {
   let arr = [];
+  let cnt = 0;
   for (let i = 0; i < data.length; i++) {
     if (checkExistence(data[i])) {
       arr.push(
@@ -62,30 +63,30 @@ function imageReturn(data: any, comp: any) {
           {comp[i]}
         </View>,
       );
-    }else if (!checkExistence(data[i]) && data[i] != ''){
+    } else if (!checkExistence(data[i]) && data[i] != '') {
       arr.push(
-          <View>
-            <Image
-                style={styles.logo}
-
-                source={{
-                  uri: 'https://icon-library.com/images/red-cross-icon-png/red-cross-icon-png-13.jpg',
-                }}
-            />
-            <Text>Please Enter a Correct Country Name</Text>
-          </View>,
+        <View>
+          <Image
+            style={styles.logo}
+            source={{
+              uri: 'https://icon-library.com/images/red-cross-icon-png/red-cross-icon-png-13.jpg',
+            }}
+          />
+          <Text>Please Enter a Correct Country Name</Text>
+        </View>,
       );
-    }else {
+    } else if (cnt < 1) {
+      cnt++;
       arr.push(
-          <View>
-            <Image
-                style={styles.logo}
-                source={{
-                  uri: 'https://britishcountyflags.files.wordpress.com/2018/03/question-mark-flag.png',
-                }}
-            />
-            <Text>Please Enter a Country Name</Text>
-          </View>,
+        <View>
+          <Image
+            style={styles.logo}
+            source={{
+              uri: 'https://britishcountyflags.files.wordpress.com/2018/03/question-mark-flag.png',
+            }}
+          />
+          <Text>Please Enter a Country Name</Text>
+        </View>,
       );
     }
   }
