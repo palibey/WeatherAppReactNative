@@ -6192,6 +6192,11 @@
     "prop-types" "^15.7.2"
     "yargs" "^16.1.1"
 
+"react-native-vision-camera@^2.14.0":
+  "integrity" "sha512-fKmDd3e7TRmG86UMch7aBfNDUl6w2JTsclhBOH69IFCs+a72c6QN2HDzeo/dEZYTlCbacZPH/QeBBM5/TWvySg=="
+  "resolved" "https://registry.npmjs.org/react-native-vision-camera/-/react-native-vision-camera-2.14.0.tgz"
+  "version" "2.14.0"
+
 "react-native@*", "react-native@>=0.45.0", "react-native@>=0.50.0", "react-native@0.68.2":
   "integrity" "sha512-qNMz+mdIirCEmlrhapAtAG+SWVx6MAiSfCbFNhfHqiqu1xw1OKXdzIrjaBEPihRC2pcORCoCHduHGQe/Pz9Yuw=="
   "resolved" "https://registry.npmjs.org/react-native/-/react-native-0.68.2.tgz"

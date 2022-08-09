@@ -21,19 +21,23 @@ import {Header} from './Header';
 
 import {Colors} from 'react-native/Libraries/NewAppScreen';
 import {CountryFooter} from './CountryFooter';
-import {checkExistence, codeToLatLong} from './codeToLatLong';
+import {checkExistence} from './codeToLatLong';
 
 const styles = StyleSheet.create({
   container: {
     paddingTop: 50,
   },
-  tinyLogo: {
+  flag: {
     width: 410,
     height: 220,
   },
   logo: {
     width: 66,
     height: 58,
+  },
+  middle: {
+    backgroundColor: 'gray',
+    borderWidth: 2,
   },
 });
 
@@ -48,6 +52,8 @@ function CountryTextInput(props: any) {
 }
 
 function imageReturn(data: any, comp: any) {
+  let everything = [];
+
   let arr = [];
   let cnt = 0;
   for (let i = 0; i < data.length; i++) {
@@ -55,7 +61,7 @@ function imageReturn(data: any, comp: any) {
       arr.push(
         <View>
           <Image
-            style={styles.tinyLogo}
+            style={styles.flag}
             source={{
               uri: 'https://countryflagsapi.com/png/' + data[i],
             }}
@@ -91,9 +97,15 @@ function imageReturn(data: any, comp: any) {
     }
   }
   if (data == ['']) {
-    return <Text>Please enter a country</Text>;
+    everything.push(
+      <View style={styles.middle}>
+        <Text>Please enter a country</Text>
+      </View>,
+    );
+    return everything;
   }
-  return arr;
+  everything.push(<View style={styles.middle}>{arr}</View>);
+  return everything;
 }
 
 function App() {
@@ -103,6 +115,7 @@ function App() {
 
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
+    paddingBottom: 100,
   };
 
   return (
