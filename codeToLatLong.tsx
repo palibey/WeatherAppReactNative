@@ -21,14 +21,12 @@ export function codeToLatLong(code: String) {
 export function checkExistence(code: String) {
   code = code.toUpperCase();
   let arr = Data.ref_country_codes;
-    let flag = false;
-    for (let i = 0; i < arr.length; i++) {
-      if (code == arr[i].alpha2 || code == arr[i].alpha3) {
-        flag = true;
-        return flag;
-      }
+  let flag = false;
+  for (let i = 0; i < arr.length; i++) {
+    if (code == arr[i].alpha2 || code == arr[i].alpha3) {
+      flag = true;
+      return flag;
     }
+  }
   return flag;
 }
-
-
